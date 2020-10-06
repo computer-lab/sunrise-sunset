@@ -49,7 +49,7 @@ export function FillerLights ({ locations }) {
   useFrame(({ clock }) => {
     initInstancedMesh(instancedMeshLightGuideOn, locations, 'on');
     initInstancedMesh(instancedMeshLightGuideOff, locations, 'off');
-  }, 2)
+  })
 
 
   return (
