@@ -1,6 +1,6 @@
 {
   "name": "sunrise-sunset",
-  "homepage": "https://sunrisesunsets.world",
+  "homepage": "https://ptsteadman.github.io/sunrise-sunset",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -14,7 +14,6 @@
     "react-postprocessing": "^1.2.0",
     "react-scripts": "^3.4.3",
     "react-three-fiber": "5.0.3",
-    "react-three-gui": "^0.3.1",
     "styled-jsx": "3.2.4",
     "three": "0.120.0",
     "zustand": "^3.1.3"
