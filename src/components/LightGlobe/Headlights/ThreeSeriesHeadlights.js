@@ -73,13 +73,18 @@ export function ThreeSeriesHeadlights ({ locations }) {
 
   const meshObjects = locations.map(({ position, name, onDarkSide, blinkingOff, turnLightOn }, i) => {
     return (
-      <mesh scale={[0.018, 0.018, 0.018 ]} key={name} position={position} ref={refs.current[i]}>
+      <group
+        scale={[0.018, 0.018, 0.018 ]}
+        key={name}
+        position={position}
+        ref={refs.current[i]}
+      >
         <mesh
           visible
-          geometry={lowDetailNodes['visor'].geometry}
           onClick={zoomToMesh}
           onPointerOver={handleHoverMesh}
           onPointerOut={handleUnhoverMesh}
+          geometry={lowDetailNodes['visor'].geometry}
         >
           <meshStandardMaterial
             attach="material"
@@ -222,7 +227,7 @@ export function ThreeSeriesHeadlights ({ locations }) {
             />
           </mesh>
         </Detailed>
-      </mesh>
+      </group>
     )})
   return (
     <group>

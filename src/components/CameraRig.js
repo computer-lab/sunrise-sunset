@@ -21,10 +21,10 @@ export function CameraRig () {
       orbitControlsRef.current.zoomSpeed = 0.1
       orbitControlsRef.current.rotateSpeed = 0.3
     } else if (cameraDistance < 5.5) {
-      orbitControlsRef.current.zoomSpeed = 0.2
+      orbitControlsRef.current.zoomSpeed = 0.22
       orbitControlsRef.current.rotateSpeed = 0.8
     } else {
-      orbitControlsRef.current.zoomSpeed = 0.3
+      orbitControlsRef.current.zoomSpeed = 0.33
       orbitControlsRef.current.rotateSpeed = 1
     }
     if (zoomTarget) {

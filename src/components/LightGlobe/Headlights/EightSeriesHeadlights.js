@@ -78,13 +78,18 @@ export function EightSeriesHeadlights ({ locations }) {
 
   const meshObjects = locations.map(({ position, name }, i) => {
     return (
-      <group scale={[0.02, 0.02, 0.02 ]} key={name} position={position} ref={refs.current[i]}>
+      <group
+        scale={[0.02, 0.02, 0.02 ]}
+        key={name}
+        position={position}
+        ref={refs.current[i]}
+      >
         <mesh
           visible
-          geometry={lowDetailNodes['visor'].geometry}
           onClick={zoomToMesh}
           onPointerOver={handleHoverMesh}
           onPointerOut={handleUnhoverMesh}
+          geometry={lowDetailNodes['visor'].geometry}
         >
           <meshStandardMaterial
             attach="material"

@@ -41,7 +41,7 @@ export function FillerLights ({ locations }) {
 
   const lights = locations.map(({ position }, i) => {
     return (
-      <group scale={[0.015, 0.015, 0.015]} position={position} ref={refs.current[i]}>
+      <group key={i} scale={[0.015, 0.015, 0.015]} position={position} ref={refs.current[i]}>
         <mesh geometry={nodes['visor'].geometry} >
           <meshStandardMaterial
             attach="material"

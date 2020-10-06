@@ -11,19 +11,19 @@ export const useStore = create(set => ({
   setZoomStartPosition: (zoomStartPosition) => set(state => ({ zoomStartPosition })),
   zoomToMesh: (e) => {
     e.stopPropagation();
-    e.object.updateMatrixWorld()
+    e.eventObject.updateMatrixWorld()
     const worldPos = new Vector3()
-    const headlightPos = e.object.getWorldPosition(worldPos)
+    const headlightPos = e.eventObject.getWorldPosition(worldPos)
     if (headlightPos.x === 0 && headlightPos.y === 0 && headlightPos.z === 0) return console.log('zero')
     return set(state => ({
-      zoomTarget: headlightPos.multiplyScalar(1.09)
+      zoomTarget: headlightPos.multiplyScalar(1.1)
     }))
   },
   handleHoverMesh: (e) => {
-    e.stopPropagation();
-    e.object.updateMatrixWorld()
+    e.stopPropagation()
+    e.eventObject.updateMatrixWorld()
     const worldPos = new Vector3()
-    const headlightPos = e.object.getWorldPosition(worldPos)
+    const headlightPos = e.eventObject.getWorldPosition(worldPos)
     if (headlightPos.x === 0 && headlightPos.y === 0 && headlightPos.z === 0) return console.log('zero')
     document.getElementById('cursor-style').innerHTML = 'body { cursor: pointer }'
   },
