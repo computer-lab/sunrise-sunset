@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, createRef } from "react";
 import { useFrame } from "react-three-fiber";
 import { Html, useTextureLoader } from "drei";
-import { WebGLCubeRenderTarget, Texture } from "three";
+import { WebGLCubeRenderTarget, Texture, Color } from "three";
 import {
   calculateAngleForTime,
 } from "../lib"
@@ -91,7 +91,11 @@ export function WebcamImageManager ({ locations }) {
       imgRefs.current[i].current.onload = () => {
         const tex = new Texture(imgRefs.current[i].current)
         tex.needsUpdate = true
+        billboardRefs.current[i].current.material.color = new Color(0xbbbbbb)
         billboardRefs.current[i].current.material.map = tex
+      }
+      imgRefs.current[i].current.onerror = () => {
+        billboardRefs.current[i].current.material.color = new Color(0x000000)
       }
     }
 
@@ -105,7 +109,7 @@ export function WebcamImageManager ({ locations }) {
         position={[location.position[0] * 1.1, location.position[1] * 1.1, location.position[2] * 1.1]}
       >
          <planeGeometry args={[size * aspect, size]} />
-         <meshBasicMaterial alphaMap={edgeBlur} depthWrite={false} transparent color={0xbbbbbb} />
+         <meshBasicMaterial alphaMap={edgeBlur} depthWrite={false} transparent color={0x000000} />
       </mesh>
   ))
 
