@@ -43,7 +43,7 @@ export function ThreeSeriesHeadlights ({ locations }) {
     for (const r of refs.current) {
       r.current.lookAt(0,0,0)
       // r.current.rotateX(Math.PI / 2)
-      r.current.rotateY( 5.65 * Math.PI / 4)
+      r.current.rotateY( 5 * Math.PI / 4)
       // r.current.rotateZ(Math.PI / 4)
     }
   }, [])

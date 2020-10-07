@@ -212,7 +212,8 @@
     "country": "BR",
     "timezone": "America/Sao_Paulo",
     "lat": -23.5475,
-    "lng": -46.63611
+    "lng": -46.63611,
+    "render": "EightSeries"
   },
   {
     "name": "Salvador",

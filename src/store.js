@@ -20,7 +20,7 @@ export const useStore = create(set => ({
     }))
   },
   handleHoverMesh: (e) => {
-    e.stopPropagation()
+    // e.stopPropagation()
     e.eventObject.updateMatrixWorld()
     const worldPos = new Vector3()
     const headlightPos = e.eventObject.getWorldPosition(worldPos)

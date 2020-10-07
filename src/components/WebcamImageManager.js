@@ -19,23 +19,44 @@ export function WebcamImageManager ({ locations }) {
     {
       src: 'http://207.251.86.238/cctv884.jpg?',
       location: locations.find(l => l.name === 'New York City'),
-      interval: 1.5,
+      interval: 2,
       aspect: 1.46,
-      size: 6
+      size: 5.5
+    },
+    {
+      src: 'http://cwwp2.dot.ca.gov/data/d7/cctv/image/8.jpg?',
+      location: locations.find(l => l.name === 'Los Angeles'),
+      interval: 42,
+      aspect: 1.5,
+      size: 3
     },
     {
       src: 'https://tdcctv.data.one.gov.hk/K121F.JPG?',
       location: locations.find(l => l.name === 'Shenzhen'),
-      interval: 30,
+      interval: 53,
       aspect: 1.22,
       size: 6
     },
     {
-      src: 'https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.01445.jpg?',
+      src: 'https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07367.jpg?',
       location: locations.find(l => l.name === 'Moscow'),
       interval: 30,
       aspect: 1.22,
       size: 3.5
+    },
+    {
+      src: 'http://infotrafego.pbh.gov.br/rlt/images/camara10.jpg?',
+      location: locations.find(l => l.name === 'São Paulo'),
+      interval: 35,
+      aspect: 1.22,
+      size: 5
+    },
+    {
+      src: 'https://www.rms.nsw.gov.au/trafficreports/cameras/camera_images/grandpde_bls.jpg?',
+      location: locations.find(l => l.name === 'Sydney'),
+      interval: 49,
+      aspect: 1.22,
+      size: 5
     },
   ]
   const imgRefs = useRef(webcams.map(() => createRef()))
@@ -71,7 +92,6 @@ export function WebcamImageManager ({ locations }) {
         const tex = new Texture(imgRefs.current[i].current)
         tex.needsUpdate = true
         billboardRefs.current[i].current.material.map = tex
-        // billboardRefs.current[i].current.needsUpdate = true
       }
     }
 

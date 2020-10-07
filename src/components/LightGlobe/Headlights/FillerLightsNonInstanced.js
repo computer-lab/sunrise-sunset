@@ -9,6 +9,7 @@ import {
   EMISSIVE_COLOR_LOW
 } from "../../../constants"
 import { getLightState } from "../../../lib"
+import { useStore } from "../../../store"
 
 export function FillerLights ({ locations }) {
   const { nodes } = useLoader(
@@ -17,6 +18,7 @@ export function FillerLights ({ locations }) {
   )
   const refs = useRef(locations.map(() => createRef()))
   const griddyThingRefs = useRef(locations.map(() => createRef()))
+  const envMap = useStore(state => state.envMap)
 
   useEffect(() => {
     for (const r of refs.current) {
@@ -50,6 +52,8 @@ export function FillerLights ({ locations }) {
             metalness={0.9}
             opacity={0.6}
             transparent
+            envMap={envMap}
+            envMapIntensity={1.3}
             depthWrite={false}
           />
         </mesh>
