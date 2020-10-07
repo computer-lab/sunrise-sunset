@@ -3,15 +3,15 @@ import { Color } from 'three'
 export const BG_COLOR = ''
 export const HEADLIGHT_BODY_COLOR = new Color(0x838b9f)
 export const TURN_SIGNAL_COLOR = new Color(0xF18F17)
-export const BODY_HIGHLIGHT_COLOR = 0x0a25ad
-export const BODY_DARK_COLOR = 0x646579
+export const BODY_HIGHLIGHT_COLOR = new Color(0x0a25ad)
+export const BODY_DARK_COLOR = new Color(0x77589)
 export const BEAM_COLOR_LASER = new Color(0xE9E0FF)
 export const BEAM_COLOR_STANDARD = new Color(0xEAEEF8)
 export const EMISSIVE_COLOR_LASER = new Color(0x9999ff)
 export const EMISSIVE_COLOR_STANDARD = new Color(0xadaacc)
 export const EMISSIVE_COLOR_LOW = new Color(0x666677)
 export const EMISSIVE_COLOR_OFF = new Color(0x000000)
-export const PLASTIC_COLOR = 0xddeeff
+export const PLASTIC_COLOR = new Color(0xddeeff)
 
 // geometry
 export const RADIUS = 3
