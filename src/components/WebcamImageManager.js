@@ -17,7 +17,7 @@ export function WebcamImageManager ({ locations }) {
 
   const webcams = [
     {
-      src: 'http://207.251.86.238/cctv884.jpg?',
+      src: 'https://jpg.nyctmc.org/cctv884.jpg?',
       location: locations.find(l => l.name === 'New York City'),
       interval: 2,
       aspect: 1.46,
