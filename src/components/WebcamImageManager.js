@@ -88,11 +88,12 @@ export function WebcamImageManager ({ locations }) {
   useEffect(() => {
     for (let i = 0; i < webcams.length; i++) {
       billboardRefs.current[i].current.lookAt(0, 0, 0)
+      const tex = new Texture(imgRefs.current[i].current)
+      tex.needsUpdate = true
+      billboardRefs.current[i].current.material.map = tex
       imgRefs.current[i].current.onload = () => {
-        const tex = new Texture(imgRefs.current[i].current)
         tex.needsUpdate = true
         billboardRefs.current[i].current.material.color = new Color(0xbbbbbb)
-        billboardRefs.current[i].current.material.map = tex
       }
       imgRefs.current[i].current.onerror = () => {
         billboardRefs.current[i].current.material.color = new Color(0x000000)
@@ -116,19 +117,20 @@ export function WebcamImageManager ({ locations }) {
   const images = webcams.map(({ location, src }, i) => (
     <img
       key={i}
+        layers={[11]}
       alt='traffic cam'
       style={{ display: 'none' }}
       crossOrigin="anonymous"
       ref={imgRefs.current[i]}
-      src={`${corsProxy}/${src}`}
+      src={`${corsProxy}/${src}&rand=${Math.floor(new Date().getTime() / 1000)}`}
     />
   ))
 
   return (
     <>
       <cubeCamera
-        layers={[11]}
         name="cubeCamera"
+        layers={[11]}
         ref={cubeCamera}
         position={[0, 0, 0]}
         // i. notice how the renderTarget is passed as a constructor argument of the cubeCamera object
